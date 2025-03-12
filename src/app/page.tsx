@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import AIChatbot from '@/components/ai-chatbot';
 import Preview from '@/components/preview';
 import { generateCode } from '@/lib/ai';
-import { GameConfig } from '@/app/services/gamegenerator';
+import { GameConfig } from '@/app/services/gameGenerator';
 import { ProjectService } from '@/app/services/projectservice';
 import { ImageGenerator } from '@/lib/image-generator';
 
