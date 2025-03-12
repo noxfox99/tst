@@ -1,7 +1,7 @@
 // src/app/services/projectservice.ts (statt src/services/projectservice.ts)
 import { db } from '@/lib/firebase';
 import { collection, addDoc, updateDoc, deleteDoc, doc, getDocs, getDoc, query, where } from 'firebase/firestore';
-import { GameConfig } from '@/app/services/gamegenerator';
+import { GameConfig } from '@/app/services/gameGenerator';
 
 export interface Project {
   id?: string;
