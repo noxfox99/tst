@@ -13,20 +13,23 @@ export default function Preview({ gameConfig, isLoading }: PreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<GameGenerator | null>(null);
 
-  useEffect(() => {
-    // Clean up previous game instance
-    if (gameRef.current) {
-      gameRef.current.cleanup();
-      gameRef.current = null;
+    useEffect(() => {
+    // Ensure game is only initialized on the client side
+    if (typeof window !== 'undefined') {
+      // Cleanup any previous game instance
+      if (gameRef.current) {
+        gameRef.current.cleanup();
+        gameRef.current = null;
+      }
+
+      // Initialize the game if gameConfig is provided
+      if (gameConfig && containerRef.current) {
+        gameRef.current = new GameGenerator(containerRef.current, gameConfig);
+        gameRef.current.initialize();
+      }
     }
 
-    // Initialize new game if config is provided
-    if (gameConfig && containerRef.current) {
-      gameRef.current = new GameGenerator(containerRef.current, gameConfig);
-      gameRef.current.initialize();
-    }
-
-    // Clean up on component unmount
+    // Cleanup when the component is unmounted
     return () => {
       if (gameRef.current) {
         gameRef.current.cleanup();
