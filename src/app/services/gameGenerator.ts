@@ -1,5 +1,5 @@
 // src/app/services/gamegenerator.ts
-import Phaser from 'phaser';
+import * as Phaser from 'phaser'; // Correct
 import io from 'socket.io-client';
 import type { Socket } from 'socket.io-client';
 
