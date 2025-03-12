@@ -2,7 +2,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import { GameGenerator, GameConfig } from '../../app/services/gamegenerator'; // Korrigierte Importanweisung
+import { GameGenerator, GameConfig } from '@/app/services/gameGenerator';
 
 interface PreviewProps {
   gameConfig?: GameConfig | null;
