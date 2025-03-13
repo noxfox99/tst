@@ -10,7 +10,8 @@ type GrokResponse = {
   text: string;
 };
 
-const openai = new OpenAI({ apiKey: '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'dangerouslyAllowBrowser: true });
+const openai = new OpenAI({ apiKey: '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',
+                           dangerouslyAllowBrowser: true,});
 
 export async function generateGrokResponse({ prompt, model = "gpt-4", maxTokens = 100 }: GrokRequest): Promise<GrokResponse> {
   try {
