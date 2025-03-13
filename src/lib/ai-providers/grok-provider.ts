@@ -6,7 +6,7 @@ export const grokProvider: AIProvider = {
   
   async isAvailable(): Promise<boolean> {
     try {
-      const apiKey = process.env.NEXT_PUBLIC_GROK_API_KEY;
+      const apiKey = 'xai-SJU54jojUXwhne5Q9WcLcojdk2wdsNq0tw6bHLID1deRdgpA37QMVelrCX2aSwcq0S4sO82WoaYf0QQj';
       return !!apiKey;
     } catch (error) {
       console.error('Error checking Grok availability:', error);
@@ -17,7 +17,7 @@ export const grokProvider: AIProvider = {
   async generateText(config: AIConfig): Promise<AIResponse> {
     try {
       const { prompt, type, systemPrompt, maxTokens = 2000, temperature = 0.7 } = config;
-      const apiKey = process.env.NEXT_PUBLIC_GROK_API_KEY;
+      const apiKey = 'xai-SJU54jojUXwhne5Q9WcLcojdk2wdsNq0tw6bHLID1deRdgpA37QMVelrCX2aSwcq0S4sO82WoaYf0QQj';
       
       if (!apiKey) {
         throw new Error('Grok API key not configured');
