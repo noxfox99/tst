@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 
 // Initialize OpenAI with API key
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: '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',
 });
 
 export const openaiProvider: AIProvider = {
@@ -12,7 +12,7 @@ export const openaiProvider: AIProvider = {
   
   async isAvailable(): Promise<boolean> {
     try {
-      const apiKey = process.env.OPENAI_API_KEY;
+      const apiKey = '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';
       return !!apiKey;
     } catch (error) {
       console.error('Error checking OpenAI availability:', error);
