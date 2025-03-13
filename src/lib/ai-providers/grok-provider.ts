@@ -29,7 +29,7 @@ export const grokProvider: AIProvider = {
         temperature: temperature,
       };
 
-      const response = await fetch('https://grok-api-url.com/v1/completions', {  // Replace with actual Grok API URL
+      const response = await fetch('https://api.grok.com/v1/chat', {  // Replace with actual Grok API URL
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
