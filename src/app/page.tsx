@@ -199,7 +199,10 @@ const HomePage: React.FC = () => {  // Expliziter Komponententyp mit React.FC
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-      
+      <Preview
+gameConfig={gameConfig}
+isLoading={isGenerating}
+/>
         </motion.div>
       </div>
 
